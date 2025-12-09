@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     localStorage.setItem("accessToken", accessToken);
     setToken(accessToken);
     setUser(userData);
-    navigate(ROUTES.HOME); // Store full user info
+    // navigate(ROUTES.HOME); // Store full user info
   }, []);
 
 
