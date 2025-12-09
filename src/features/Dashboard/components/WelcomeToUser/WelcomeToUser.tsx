@@ -25,8 +25,7 @@ const WelcomeToUser = () => {
     showToast("Logout successful", "success");
   };
 
-  const formatDateTime = (timestamp: number) =>
-    new Date(timestamp * 1000).toLocaleString();
+
 
   return (
     <Box
@@ -86,14 +85,7 @@ const WelcomeToUser = () => {
 
           {user && (
             <Grid container spacing={2}>
-              <Grid size={{ xs: 12, sm: 6 }}>
-                <Typography variant="body2" color="text.secondary">
-                  User ID
-                </Typography>
-                <Typography variant="body1" sx={{ fontWeight: 500 }}>
-                  {user.id}
-                </Typography>
-              </Grid>
+             
 
               {user.email && (
                 <Grid size={{ xs: 12, sm: 6 }}>
@@ -117,23 +109,9 @@ const WelcomeToUser = () => {
                 </Grid>
               )}
 
-              <Grid size={{ xs: 12, sm: 6 }}>
-                <Typography variant="body2" color="text.secondary">
-                  Account Created
-                </Typography>
-                <Typography variant="body1" sx={{ fontWeight: 500 }}>
-                  {formatDateTime(user.iat)}
-                </Typography>
-              </Grid>
+             
 
-              <Grid size={{ xs: 12, sm: 6 }}>
-                <Typography variant="body2" color="text.secondary">
-                  Token Expiry
-                </Typography>
-                <Typography variant="body1" sx={{ fontWeight: 500 }}>
-                  {formatDateTime(user.exp)}
-                </Typography>
-              </Grid>
+           
             </Grid>
           )}
 
