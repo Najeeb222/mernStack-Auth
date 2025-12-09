@@ -74,9 +74,9 @@ const LoginForm = () => {
                 label="Remember me"
                 sx={{ fontSize: "13px" }}
               />
-              <Link to={ROUTES.FORGOT_PASSWORDS} style={{ color: COLORS.error.main, fontSize: "13px", textDecoration: "none" }}>
+              {/* <Link to={ROUTES.FORGOT_PASSWORDS} style={{ color: COLORS.error.main, fontSize: "13px", textDecoration: "none" }}>
                 Forgot Password?
-              </Link>
+              </Link> */}
             </Stack>
 
             <Button
