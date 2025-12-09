@@ -32,22 +32,14 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   // Login function
   const login = useCallback((accessToken: string, userData: UserType) => {
+    
     localStorage.setItem("accessToken", accessToken);
     setToken(accessToken);
-    setUser(userData); // Store full user info
+    setUser(userData);
+    navigate(ROUTES.HOME); // Store full user info
   }, []);
 
 
-// const logout = useCallback(() => {
-//   localStorage.removeItem("accessToken");
-//   setToken(null);
-//   setUser(null);
-
- 
-  
-
-//   api.post("/auth/logout", {}, { withCredentials: true });
-// }, []);
 
 
 const logout = useCallback(async () => {
@@ -65,7 +57,7 @@ navigate(ROUTES.LOGIN);
   setUser(null);
 }, []);
 
-  // Refresh access token
+
   const refreshToken = useCallback(async () => {
     try {
       const res = await api.get("/auth/refresh-token", { withCredentials: true });

@@ -9,7 +9,7 @@ import { loginUser } from "libs";
 import { useState } from "react";
 
 const LoginForm = () => {
-  const { login, user } = useAuth();
+  const { login, } = useAuth();
   const { showToast } = useToast()
   const navigate = useNavigate();
   const methods = useForm<{ email: string; password: string }>();
@@ -17,23 +17,26 @@ const LoginForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const submitData = async (data: { email: string; password: string }) => {
+    console.log("submitData called", data); // <-- check this
     setIsLoading(true);
     try {
       const res = await loginUser(data);
-      console.log(res, 'Login Response');
-      console.log(user, 'User Info');
-      login(res.token, res.user);
-      navigate(ROUTES.HOME);
-      showToast("Account Login Successfully", 'success')
-    } catch (err) {
+      console.log("Login Response:", res);
 
-      showToast("Invalid username or password. Please try again.", 'error')
-      console.log("Login error:", err);
-      showToast("Login error:", "error");
+      login(res.data.accessToken, res.data.user);
+      console.log("User logged in successfully");
+
+      navigate(ROUTES.HOME);
+      showToast("Account Login Successfully", "success");
+    } catch (err) {
+      console.log("Login error caught:", err);
+      showToast("Invalid username or password. Please try again.", "error");
     } finally {
       setIsLoading(false);
     }
   };
+
+
 
   return (
     <Stack gap={"30px"} justifyContent={"center"} direction={"column"} height={"100%"} maxWidth={400} margin="0 auto">

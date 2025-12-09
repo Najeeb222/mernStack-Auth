@@ -17,8 +17,7 @@ export interface UserType {
   name?: string;
   avatar?: string;
   provider?: string;
-  iat: number;
-  exp: number;
+
 }
 
 export interface AuthContextType {
