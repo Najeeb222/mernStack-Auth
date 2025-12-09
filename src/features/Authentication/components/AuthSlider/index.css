@@ -1,0 +1,72 @@
+/* index.css */
+.slick-dots {
+  display: flex !important;
+  gap: 8px;
+  justify-content: center;
+  padding: 0;
+  margin: 16px 0 0;
+  list-style: none;
+}
+
+.slick-dots li button {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  padding: 0;
+  background: #ccc;
+  border: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* optionally enlarge hit area without changing visual */
+.slick-dots li button::before {
+  content: "";
+  position: absolute;
+  inset: -6px; /* increases clickable area */
+  border-radius: 50%;
+}
+
+.slick-dots li.slick-active button {
+  width: 30px;
+  height: 10px;
+  border-radius: 5px;
+  background: #1976d2;
+}
+/* index.css */
+.slick-dots {
+  display: flex !important;
+  gap: 8px;
+  justify-content: center;
+  padding: 0;
+  margin: 16px 0 0;
+  list-style: none;
+}
+
+.slick-dots li button {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  padding: 0;
+  background: #ccc;
+  border: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* optionally enlarge hit area without changing visual */
+.slick-dots li button::before {
+  content: "";
+  position: absolute;
+  inset: -6px; /* increases clickable area */
+  border-radius: 50%;
+}
+
+.slick-dots li.slick-active button {
+  width: 30px;
+  height: 10px;
+  border-radius: 5px;
+  background: #1976d2;
+}
